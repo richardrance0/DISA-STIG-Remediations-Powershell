@@ -1,7 +1,6 @@
 <#
 .SYNOPSIS
-    This script changes the Windows 10 account lockout duration to 15 minutes or greater.
-
+    The screen saver must be enabled and configured to activate after 15 minutes of user inactivity to enforce session lock.
 .NOTES
     Author          : Richard Rance
     LinkedIn        : linkedin.com/in/richardrance/
@@ -20,9 +19,16 @@
     PowerShell Ver. : 5.1.19041.5848
 
 .USAGE
-    run this in Powershell after saving the file to your computer.
+    1. Copy the below text into a text editor (e.g., Notepad).
+
+    2. Save the file with a .reg extension, such as __remediation_template(STIG-ID-WN10-AU-000500).reg.
+
+    3. Double-click the file to apply the settings, or deploy via PowerShell.   
+    
     Example syntax:
     PS C:\> .\__remediation_template(STIG-ID-WN10-AU-000500).ps1 
 #>
 
-# YOUR CODE GOES HERE
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop
+
