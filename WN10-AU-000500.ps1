@@ -22,7 +22,7 @@
 .USAGE
     Run this as a Powershell command, using a file saved to our computer.
     Example syntax:
-    PS C:\> .\__remediation_template(STIG-ID-WN10-AU-000500).ps1 
+    PS C:\> .\__remediation_template_STIG-ID-WN10-AU-000500.ps1 
 #>
 
 # Define the registry path and property
