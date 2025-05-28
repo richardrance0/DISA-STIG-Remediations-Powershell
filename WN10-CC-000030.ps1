@@ -1,4 +1,4 @@
-Author              : Richard Rance
+<#  Author              : Richard Rance
     LinkedIn        : www.linkedin.com/in/richardrance
     GitHub          : github.com/richardrance0
     Date Created    : 2025-05-28
@@ -19,7 +19,7 @@ Author              : Richard Rance
     PS C:\> .\__remediation_template(STIG-ID-WN10-CC-000030).ps1
 #>
 
-# Code begins here
+# Code begins here:
 
 # Define registry path and value
 $regPath = "HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters"
