@@ -20,7 +20,7 @@
     PowerShell Ver. : 5.1.19041.5848
 
 .USAGE
-    Put any usage instructions here.
+    Run this as a Powershell command, using a file saved to our computer.
     Example syntax:
     PS C:\> .\__remediation_template(STIG-ID-WN10-AU-000500).ps1 
 #>
