@@ -16,7 +16,7 @@
 .TESTED ON
     Date(s) Tested  : 2025-05-27
     Tested By       : Richard Rance
-    Systems Tested  : RickWin10STIG
+    Systems Tested  : Windows 10 Pro VM
     PowerShell Ver. : 5.1.19041.5848
 
 .USAGE
