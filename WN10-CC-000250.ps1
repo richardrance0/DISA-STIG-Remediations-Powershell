@@ -21,17 +21,17 @@
 
 # Code starts here:
 
-# Define registry path and value
-$regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
-$valueName = "AllowCortana"
-$desiredValue = 0
+# Define the registry path and value
+$regPath = "HKLM:\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter"
+$valueName = "EnabledV9"
+$desiredValue = 1
 
 # Create the path if it doesn't exist
 if (-not (Test-Path $regPath)) {
     New-Item -Path $regPath -Force | Out-Null
 }
 
-# Set the registry value to disable Cortana
+# Set the registry value
 New-ItemProperty -Path $regPath -Name $valueName -Value $desiredValue -PropertyType DWord -Force | Out-Null
 
-Write-Output "Cortana has been disabled by setting $valueName to $desiredValue at $regPath."
+Write-Output "SmartScreen filter for Microsoft Edge has been enabled (EnabledV9 = 1)."
