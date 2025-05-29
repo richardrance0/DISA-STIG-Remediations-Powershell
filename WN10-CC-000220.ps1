@@ -17,17 +17,21 @@
 
 # Code begins here:
 
-# Define registry path and value
-$regPath = "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters"
-$valueName = "SMB1"
-$desiredValue = 0
+# Define registry path
+$regPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Explorer"
 
-# Check and create the registry path if it doesn't exist
-if (-Not (Test-Path $regPath)) {
+# Define value name and value
+$valueName = "NoControlPanel"      # Example value: disables Control Panel access
+$valueData = 1                     # 1 = disable, 0 = enable
+$valueType = "DWord"               # Use "String" or "DWord" as needed
+
+# Create the registry path if it does not exist
+if (-not (Test-Path $regPath)) {
     New-Item -Path $regPath -Force | Out-Null
 }
 
-# Set the SMB1 value to 0 (disabled)
-New-ItemProperty -Path $regPath -Name $valueName -Value $desiredValue -PropertyType DWord -Force | Out-Null
+# Set the registry value
+New-ItemProperty -Path $regPath -Name $valueName -Value $valueData -PropertyType $valueType -Force | Out-Null
 
-Write-Output "SMBv1 has been disabled by setting $valueName to $desiredValue at $regPath."
+Write-Output "Registry setting applied: $valueName = $valueData at $regPath"
+
